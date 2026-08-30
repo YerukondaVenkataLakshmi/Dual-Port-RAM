@@ -15,6 +15,7 @@ This project implements a **synchronous dual-port RAM** using **Verilog HDL**. T
 * Parameterized data width, address width and memory depth
 * Verilog RTL implementation
 * Self-checking simulation testbench
+* Power estimation using Xilinix Vivado
 
 
 ## Design Parameters
@@ -207,6 +208,7 @@ The project includes a self-checking Verilog testbench that verifies the major f
 | Test 5 | BIST operation                   |
 | Test 6 | ECC single-bit correction        |
 | Test 7 | ECC double-bit error detection   |
+| Test 8 | Low-power / power estimation     |
 
 The testbench maintains:
 
@@ -216,6 +218,13 @@ FAIL COUNT
 ```
 
 and reports the final simulation result.
+## Low-Power Analysis
+
+Power estimation was performed on the synthesized design using Xilinx Vivado.
+
+The estimated total on-chip power is **10.996 W**, consisting of **3.974 W dynamic power** and **7.022 W device static power**. The estimated I/O power is **0 W** for the evaluated configuration.
+
+This analysis provides an early estimate of the power consumption of the Dual-Port RAM design.
 
 ## Project Structure
 
@@ -267,6 +276,18 @@ FAIL COUNT = 0
 ====================================
 RESULT : ALL TESTS PASSED
 ```
+## Power Estimation Result
+
+Power estimation was performed using Xilinx Vivado on the synthesized design.
+
+- Total On-Chip Power: **10.996 W**
+- Dynamic Power: **3.974 W**
+- Device Static Power: **7.022 W**
+- I/O Power: **0 W**
+- Junction Temperature: **100°C**
+- Ambient Temperature: **25°C**
+
+The result provides an early estimate of the power consumption of the synthesized Dual-Port RAM design.
 
 ## Technologies Used
 
