@@ -16,30 +16,6 @@ This project implements a **synchronous dual-port RAM** using **Verilog HDL**. T
 * Verilog RTL implementation
 * Self-checking simulation testbench
 
-## Architecture
-
-The memory contains encoded data words instead of storing raw data directly.
-
-```text
-                 ┌──────────────────────────┐
-                 │      Dual-Port RAM       │
-                 │                          │
- Port A ────────►│                          │◄──────── Port B
-                 │       ECC Memory         │
-                 │                          │
-                 └────────────┬─────────────┘
-                              │
-                    ┌─────────┴─────────┐
-                    │   ECC Encoder /   │
-                    │      Decoder      │
-                    └───────────────────┘
-
-                 ┌───────────────────────┐
-                 │         BIST          │
-                 │ Write → Read/Write →  │
-                 │ Read/Write → Read     │
-                 └───────────────────────┘
-```
 
 ## Design Parameters
 
